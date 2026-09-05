@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_root" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#0A1931">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/wallpaper_blue" android:scaleType="centerCrop"/>
+    <View android:id="@+id/double_tap_zone" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <ImageView android:id="@+id/settings_icon" android:layout_width="44dp" android:layout_height="44dp" android:src="@android:drawable/ic_menu_preferences" android:layout_gravity="top|end" android:layout_margin="16dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="110dp" android:gravity="center">
+        <TextView android:id="@+id/big_clock" android:text="10:45" android:textSize="82sp" android:textStyle="bold" android:textColor="#87CEEB" android:fontFamily="sans-serif-light" android:layout_gravity="center"/>
+        <TextView android:id="@+id/date_text" android:text="Fri, 4 Sep" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_gravity="center"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/app_drawer" android:layout_width="match_parent" android:layout_height="600dp" android:orientation="vertical" android:background="#122C4F" app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" app:behavior_hideable="true">
+        <View android:layout_width="40dp" android:layout_height="4dp" android:background="#87CEEB" android:layout_gravity="center" android:layout_marginTop="10dp"/>
+        <TextView android:text="All Apps - Swipe up 2 fingers for Hidden" android:textColor="#87CEEB" android:layout_margin="16dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/apps_grid" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/control_center" android:layout_width="match_parent" android:layout_height="380dp" android:orientation="vertical" android:background="#E3F2FD" app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" app:behavior_hideable="true">
+        <TextView android:text="Control Center - Tap to ON" android:textColor="#0A1931" android:textStyle="bold" android:layout_margin="16dp"/>
+        <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="4" android:padding="10dp">
+            <Button android:id="@+id/btn_wifi" android:text="WiFi" android:layout_margin="4dp"/>
+            <Button android:id="@+id/btn_data" android:text="Data" android:layout_margin="4dp"/>
+            <Button android:text="BT" android:layout_margin="4dp"/>
+            <Button android:text="Torch" android:layout_margin="4dp"/>
+        </GridLayout>
+    </LinearLayout>
+</FrameLayout>
